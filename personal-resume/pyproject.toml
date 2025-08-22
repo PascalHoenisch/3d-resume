@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "3d-resume"
+version = "0.1.0"
+description = "3d-resume: JSON-powered SPA to showcase a technical engineer's resume with interactive 3D STEP models."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "Thomas Davis", email = "thomasalwyndavis@gmail.com" }
+]
+keywords = ["resume", "spa", "json", "3d", "step", "web", "server", "uv"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+  "Topic :: Multimedia :: Graphics :: 3D Modeling"
+]
+dependencies = []
+
+[project.scripts]
+3d-resume-serve = "three_d_resume.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+dev-dependencies = [
+    "playwright>=1.48.0",
+    "pytest",
+    "pytest-playwright>=0.5.2",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = ["E", "F", "I"]

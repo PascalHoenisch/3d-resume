@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "theme": "elegant"
+  },
+  "basics": {
+    "name": "Thomas Davis",
+    "label": "Web Developer",
+    "image": "assets/images/profile.jpg",
+    "summary": "I'm a full stack web developer who can build apps from the ground up. I've worked mostly at startups so I am used to wearing many hats. I am a very product focussed developer who priotizes user feedback first and foremost. I'm generally very flexible when investigating new roles. ",
+    "website": "https://lordajax.com",
+    "email": "thomasalwyndavis@gmail.com",
+    "location": {
+      "city": "Melbourne",
+      "countryCode": "AU"
+    },
+    "profiles": [
+      {
+        "username": "ajaxdavis",
+        "url": "https://twitter.com/ajaxdavis",
+        "network": "twitter"
+      },
+      {
+        "url": "https://github.com/thomasdavis",
+        "username": "thomasdavis",
+        "network": "github"
+      }
+    ]
+  },
+  "education": [
+    {
+      "endDate": "2009-12-12",
+      "startDate": "2008-02-12",
+      "area": "Software Engineering (incomplete)",
+      "studyType": "Bachelors",
+      "institution": "The University of Queensland"
+    }
+  ],
+  "references": [
+    {
+      "reference": "Thomas is an extremely talented engineer with a very broad range of skills and experience. From being a thought leader in the front-end community via backbonetutorials.com and cdnjs.com, to designing and implementing the API for cdnjs.com, working with Thomas has been fantastic learning experience. Thomas is truly a full stack develop, and his work output is incredible. If there is any opportunity to work with Thomas, I take it. He is the definition of an A player.",
+      "name": "Ryan Kirkman, Senior Software Engineer at Nerdwallet"
+    },
+    {
+      "reference": "On Thomas Davis... Hire this guy. Do not be fooled. Incredibly capable and fast. Plays well with others. Unbelievable at front-end work end programming but that is just the start. Visionary. Hire him before I do.",
+      "name": "Greg Davis"
+    }
+  ],
+  "skills": [
+    {
+      "keywords": [
+        "HTML / JSX",
+        "SCSS / CSS / BEM / Styled Components",
+        "Javascript / Typescript",
+        "React / Next",
+        "Redux / Apollo"
+      ],
+      "level": "Senior",
+      "name": "Frontend"
+    },
+    {
+      "keywords": ["Node", "Ruby", "Python", "Postgres", "Redis", "Serverless"],
+      "level": "Senior",
+      "name": "Backend"
+    },
+    {
+      "keywords": ["AWS", "G Cloud", "Heroku", "Caching"],
+      "level": "Senior",
+      "name": "Devops"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Defender of the Internet",
+      "awarder": "Fight For The Future"
+    }
+  ],
+  "work": [
+    {
+      "summary": "Sample 3D shapes object included in this repo under 3d-sources/test.json. Auto-loads to demonstrate local .json usage.",
+      "website": "",
+      "name": "Example JSON Project",
+      "position": "Sample 3D Model",
+      "startDate": "2025-01-01",
+      "highlights": ["JSON", "OpenCascade", "three-cad-viewer", "Local file"],
+      "jsonUrl": "./3d-sources/test.json"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Gardening"
+    },
+    {
+      "name": "Music / Jamming"
+    },
+    {
+      "name": "Reading / Writing"
+    },
+    {
+      "name": "Open Source"
+    }
+  ]
+}
