@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "3d-resume"
 version = "0.1.0"
-description = "3d-resume: JSON-powered SPA to showcase a technical engineer's resume with interactive 3D STEP models."
+description = "3d-resume: JSON-powered SPA to showcase a technical engineer's resume with interactive 3D CAD models."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [
-  { name = "Thomas Davis", email = "thomasalwyndavis@gmail.com" }
+  { name = "Pascal Hönisch", email = "admin@hoenisch.eu" }
 ]
 keywords = ["resume", "spa", "json", "3d", "step", "web", "server", "uv"]
 classifiers = [

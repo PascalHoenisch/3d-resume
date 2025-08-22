@@ -4,7 +4,6 @@ Version: 0.1.0
 Summary: 3d-resume: JSON-powered SPA to showcase a technical engineer's resume with interactive 3D STEP models.
 Author-email: Thomas Davis <thomasalwyndavis@gmail.com>
 License: MIT
-Project-URL: Homepage, https://lordajax.com
 Keywords: resume,spa,json,3d,step,web,server,uv
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
