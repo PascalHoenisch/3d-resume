@@ -36,9 +36,20 @@ Run tests
 STEP models on projects
 - To auto-load a model from the web, add a custom field to a work item in resume.json:
   "stepUrl": "https://example.com/path/to/model.step"  # .step or .stp URLs are supported
-- An example local model is pre-configured in resume.json pointing to the repo directory:
-  "stepUrl": "./stp/test.stp"
+- An example local model is available in this repository under 3d-sources/step:
+  "stepUrl": "./3d-sources/step/Spannvorrichtung.STEP"
 - Or use the "Load .STEP" button on a project card to choose a local .step/.stp file.
+
+STEP/IGES to JSON converter (optional)
+- This repo includes a small Python CLI to convert STEP into the JSON format used by three-cad-viewer (see 3d-sources/test.json). It is optional and requires extra packages.
+- Install the optional dependencies in your environment:
+  - pip install ocp-tessellate build123d
+  - or: pip install ocp-tessellate cadquery
+- Convert:
+  - uv run step-to-json --in path/to/model.step --out 3d-sources/model.json
+  - Options: --name MyModel --color #ff0000 --deflection 0.1 --angle 12
+- Then point a work item in resume.json to the JSON:
+  "jsonUrl": "./3d-sources/model.json"
 
 Notes
 - three-cad-viewer downloads the OpenCascade WASM bundle at runtime; first load may take a few seconds.

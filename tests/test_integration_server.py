@@ -90,7 +90,7 @@ class IntegrationServerTest(unittest.TestCase):
                 "profiles": [{"network": "github", "username": "janedoe", "url": "https://github.com/janedoe"}],
             },
             "work": [
-                {"name": "Sample STP", "position": "CAD", "startDate": "2025-01-01", "stepUrl": "./stp/test.stp", "highlights": ["STP"]}
+                {"name": "Sample STP", "position": "CAD", "startDate": "2025-01-01", "stepUrl": "./3d-sources/step/Spannvorrichtung.STEP", "highlights": ["STP"]}
             ],
             "skills": [{"name": "CAD", "level": "Senior", "keywords": ["STEP", "OpenCascade"]}],
             "education": [],
@@ -145,7 +145,7 @@ class IntegrationServerTest(unittest.TestCase):
                 self.assertEqual(cl, "0")
 
             # The local avatar file should be served (if present)
-            with wait_for_ok(f"{srv.base}/assets/image/person.jpeg", timeout=5) as resp_img:
+            with wait_for_ok(f"{srv.base}/assets/image/person.png", timeout=5) as resp_img:
                 self.assertEqual(resp_img.status, 200)
 
         finally:

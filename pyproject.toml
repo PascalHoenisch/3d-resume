@@ -22,8 +22,12 @@ classifiers = [
 ]
 dependencies = []
 
+[project.optional-dependencies]
+dev = ["rjsmin>=1.2.2"]
+
 [project.scripts]
 3d-resume-serve = "three_d_resume.server:main"
+step-to-json = "three_d_resume.step_to_json:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

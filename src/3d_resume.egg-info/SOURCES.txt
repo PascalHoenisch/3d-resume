@@ -4,9 +4,12 @@ src/3d_resume.egg-info/PKG-INFO
 src/3d_resume.egg-info/SOURCES.txt
 src/3d_resume.egg-info/dependency_links.txt
 src/3d_resume.egg-info/entry_points.txt
+src/3d_resume.egg-info/requires.txt
 src/3d_resume.egg-info/top_level.txt
 src/three_d_resume/__init__.py
 src/three_d_resume/server.py
+src/three_d_resume/step_to_json.py
 tests/test_browser_console_bridge.py
 tests/test_frontend_js.py
 tests/test_integration_server.py
+tests/test_uv_removed_sections.py

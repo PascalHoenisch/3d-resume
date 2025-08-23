@@ -1,2 +1,3 @@
 [console_scripts]
 3d-resume-serve = three_d_resume.server:main
+step-to-json = three_d_resume.step_to_json:main

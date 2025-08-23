@@ -1,4 +1,5 @@
 :root {
+  /* Default to dark theme; override in light-mode media query */
   --bg: #0f1115;
   --panel: #151823;
   --muted: #9aa4b2;
@@ -17,6 +18,33 @@ body {
   color: var(--text);
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
   letter-spacing: 0.2px;
+}
+
+/* Light theme overrides based on user preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f7fb;
+    --panel: #ffffff;
+    --muted: #5b6572;
+    --text: #1c2230;
+    --accent: #2b6cff;
+    --accent-2: #00b37d;
+    --border: #e5e8f0;
+    --chip: #f1f4fa;
+  }
+  body {
+    background: radial-gradient(1200px 1200px at 10% -20%, #eef2fb 0%, #f6f7fb 60%);
+    color: var(--text);
+  }
+  .card,
+  .work-card,
+  .ref,
+  .viewer-wrap {
+    background: var(--panel) !important;
+    border-color: var(--border) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .header .meta .dot { color: #cfd6e6; }
 }
 
 #app { max-width: 1080px; margin: 0 auto; padding: 24px; }
@@ -83,8 +111,35 @@ body {
   border-radius: 12px;
   overflow: hidden;
 }
+/* Mobile/phone hint above each viewer (hidden by default) */
+.mobile-rotate-hint {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 10px 0 8px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.15);
+  color: var(--muted);
+}
+.hint-icon { font-size: 1.1rem; line-height: 1; }
+/* Show hint on small screens in portrait orientation */
+@media (max-width: 820px) and (orientation: portrait) {
+  .mobile-rotate-hint { display: flex; }
+}
+/* Light theme base already brightens components; tweak hint background */
+@media (prefers-color-scheme: light) {
+  .mobile-rotate-hint { background: rgba(0,0,0,0.04); }
+}
+/* Elegant theme tweaks */
+body[data-theme="elegant"] .mobile-rotate-hint {
+  border-style: solid;
+  background: rgba(95, 179, 255, 0.06);
+}
+
 .viewer-toolbar {
-  display: flex; gap: 8px; padding: 8px; background: #0b0e18; border-bottom: 1px solid var(--border);
+  display: none;
 }
 .viewer-toolbar button, .viewer-toolbar label {
   background: #121933;
@@ -131,3 +186,79 @@ body {
 }
 
 .hint { color: var(--muted); font-size: 0.9rem; }
+
+
+/* Named theme support via body[data-theme] */
+/* Elegant theme — angular engineering, modern */
+body[data-theme="elegant"] {
+  --bg: #0b0e13;
+  --panel: #0f141d;
+  --muted: #8a97a6;
+  --text: #e2e8f0;
+  --accent: #00d3a7;
+  --accent-2: #5fb3ff;
+  --border: #1b2332;
+  --chip: #0f1826;
+  background:
+    radial-gradient(1200px 1200px at 15% -25%, #0f1726 0%, var(--bg) 60%),
+    /* engineering grid overlay */
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 24px);
+  color: var(--text);
+  letter-spacing: 0.15px;
+}
+
+@media (prefers-color-scheme: light) {
+  body[data-theme="elegant"] {
+    --bg: #f5f8fc;
+    --panel: #ffffff;
+    --muted: #596273;
+    --text: #111827;
+    --accent: #007d66;
+    --accent-2: #2b6cff;
+    --border: #dbe3ef;
+    --chip: #eef3fa;
+    background:
+      radial-gradient(1200px 1200px at 15% -25%, #e9f2ff 0%, var(--bg) 60%),
+      /* subtle grid */
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0, rgba(0,0,0,0.025) 1px, transparent 1px, transparent 24px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.025) 0, rgba(0,0,0,0.025) 1px, transparent 1px, transparent 24px);
+    color: var(--text);
+  }
+}
+
+body[data-theme="elegant"] .avatar-wrap { border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+
+body[data-theme="elegant"] .section h2 {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+body[data-theme="elegant"] .profiles a,
+body[data-theme="elegant"] .badge,
+body[data-theme="elegant"] .chips li {
+  border-radius: 6px;
+}
+
+body[data-theme="elegant"] .card,
+body[data-theme="elegant"] .work-card,
+body[data-theme="elegant"] .ref,
+body[data-theme="elegant"] .viewer-wrap {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+}
+
+@media (prefers-color-scheme: light) {
+  body[data-theme="elegant"] .card,
+  body[data-theme="elegant"] .work-card,
+  body[data-theme="elegant"] .ref,
+  body[data-theme="elegant"] .viewer-wrap {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+}
+
+body[data-theme="elegant"] .work-title a { color: var(--accent); }
+body[data-theme="elegant"] .header .meta a { color: var(--accent); }
+body[data-theme="elegant"] .header .meta .dot { color: #2a3347; }

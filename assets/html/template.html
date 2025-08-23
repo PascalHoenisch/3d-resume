@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Resume</title>
+  <title>Lebenslauf</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="preconnect" href="https://unpkg.com" />
-  <link rel="stylesheet" href="https://unpkg.com/three-cad-viewer@3.5.1/dist/three-cad-viewer.css" />
+  <link rel="stylesheet" href="/assets/css/vendor/three-cad-viewer.css" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
   <div id="app">
     <header class="header">
       <div class="avatar-wrap">
-        <img id="avatar" alt="Profile photo" />
+        <img id="avatar" alt="Profilfoto" />
       </div>
       <div class="header-text">
         <h1 id="name"></h1>
         <p id="label" class="muted"></p>
         <p id="summary"></p>
         <div class="meta">
-          <a id="website" target="_blank" rel="noopener">Website</a>
-          <span class="dot">•</span>
-          <a id="email" href="#">Email</a>
+          <a id="email" href="#"></a>
           <span class="dot">•</span>
           <span id="location"></span>
         </div>
@@ -31,47 +30,47 @@
 
     <main>
       <section id="skills" class="section">
-        <h2>Skills</h2>
+        <h2>Fähigkeiten</h2>
         <div id="skillsList" class="cards"></div>
       </section>
 
       <section id="work" class="section">
-        <h2>Projects & Work</h2>
+        <h2>Projekte &amp; Arbeit</h2>
         <div id="workList" class="work-list"></div>
       </section>
 
       <section id="education" class="section">
-        <h2>Education</h2>
+        <h2>Ausbildung</h2>
         <div id="educationList" class="cards"></div>
       </section>
 
       <section id="awards" class="section">
-        <h2>Awards</h2>
+        <h2>Auszeichnungen</h2>
         <ul id="awardsList" class="bullets"></ul>
       </section>
 
       <section id="references" class="section">
-        <h2>References</h2>
+        <h2>Referenzen</h2>
         <div id="referencesList" class="refs"></div>
       </section>
 
       <section id="interests" class="section">
-        <h2>Interests</h2>
+        <h2>Interessen</h2>
         <ul id="interestsList" class="chips"></ul>
       </section>
     </main>
 
     <footer class="footer">
-      <span>Built as a JSON-powered SPA.</span>
+      <span>Powered by hoenisch industries.</span>
     </footer>
   </div>
 
-  <!-- three-cad-viewer (ESM build). This loads OpenCascade WASM on demand. -->
+  <!-- three-cad-viewer (ESM build). Lädt OpenCascade WASM bei Bedarf. -->
   <script type="module">
-    // Preload the module URL so the first viewer initializes faster
+    // Modul-URL vorladen, damit der erste Viewer schneller initialisiert
     const prefetch = document.createElement('link');
     prefetch.rel = 'modulepreload';
-    prefetch.href = 'https://unpkg.com/three-cad-viewer@3.5.1/dist/three-cad-viewer.esm.js';
+    prefetch.href = '/assets/js/vendor/three-cad-viewer.esm.js';
     document.head.appendChild(prefetch);
   </script>
   <script type="module" src="/assets/js/app.js"></script>

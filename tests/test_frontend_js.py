@@ -14,10 +14,11 @@ class FrontendJsTest(unittest.TestCase):
         with open(self.app_js_path, 'r', encoding='utf-8') as f:
             js = f.read()
 
-        # 1) Use named imports for new API and pin version (no @latest)
+        # 1) Use named imports for new API and use local self-hosted module (no @latest, no CDN)
         self.assertIn("import { Viewer, Display }", js)
-        self.assertIn("three-cad-viewer@3.5.1", js)
+        self.assertIn("/assets/js/vendor/three-cad-viewer.esm.js", js)
         self.assertNotIn("three-cad-viewer@latest", js)
+        self.assertNotIn("https://unpkg.com/three-cad-viewer", js)
 
         # 2) No legacy compatibility helpers or CadViewer constructor anywhere
         for legacy in [
@@ -51,12 +52,15 @@ class FrontendJsTest(unittest.TestCase):
         self.assertNotIn("/__console", js)
         self.assertNotIn("setupConsoleBridge", js)
 
-        # 8) Template should also pin modulepreload to 3.5.1 (no @latest)
+        # 8) Template should modulepreload the local self-hosted ESM (no CDN, no @latest)
         self.assertTrue(os.path.exists(self.template_path), f"Missing {self.template_path}")
         with open(self.template_path, 'r', encoding='utf-8') as tf:
             tpl = tf.read()
-        self.assertIn("three-cad-viewer@3.5.1", tpl)
+        self.assertIn("/assets/js/vendor/three-cad-viewer.esm.js", tpl)
+        # CSS should be loaded from vendor folder as well
+        self.assertIn("/assets/css/vendor/three-cad-viewer.css", tpl)
         self.assertNotIn("three-cad-viewer@latest", tpl)
+        self.assertNotIn("https://unpkg.com/three-cad-viewer", tpl)
 
 
 if __name__ == '__main__':
